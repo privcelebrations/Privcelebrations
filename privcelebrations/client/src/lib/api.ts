@@ -1,6 +1,6 @@
-// src/lib/api.ts
+// client/src/lib/api.ts
 export const API_BASE_URL =
-  import.meta.env.VITE_API_URL || "https://privcelebrations-backend.onrender.com"; // dev fallback
+  import.meta.env.VITE_API_URL || "https://privcelebrations-backend.onrender.com";
 
 export async function sendContact(data: any) {
   const res = await fetch(`${API_BASE_URL}/api/contact`, {
@@ -8,6 +8,11 @@ export async function sendContact(data: any) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-  if (!res.ok) throw new Error(await res.text());
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => null);
+    throw new Error(text || `API responded with status ${res.status}`);
+  }
+
   return res.json();
 }
