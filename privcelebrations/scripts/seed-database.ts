@@ -7,7 +7,7 @@
  * - Safe to run repeatedly (e.g. during deploy).
  */
 
-import 'dotenv/config';
+// import 'dotenv/config';
 import { db } from '../server/db';
 import { theatres, packages } from '../shared/schema';
 import { eq } from 'drizzle-orm';
