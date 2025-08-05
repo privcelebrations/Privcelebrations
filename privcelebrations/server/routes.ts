@@ -125,22 +125,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Create contact
-  app.post("/api/contacts", async (req, res) => {
+  // Create contact (support both /api/contacts and legacy /api/contact)
+  const handleCreateContact = async (req: any, res: any) => {
     try {
       const validatedData = insertContactSchema.parse(req.body);
       const contact = await storage.createContact(validatedData);
-      res.status(201).json(contact);
+      return res.status(201).json(contact);
     } catch (error) {
+      // Zod validation errors -> return 400 with structured errors
       if (error instanceof z.ZodError) {
-        return res.status(400).json({ 
-          message: "Validation error", 
-          errors: error.errors 
+        console.warn("Contact validation error:", error.errors);
+        return res.status(400).json({
+          message: "Validation error",
+          errors: error.errors,
         });
       }
-      res.status(500).json({ message: "Failed to create contact" });
+      console.error("Failed to create contact:", error);
+      return res.status(500).json({ message: "Failed to create contact" });
     }
-  });
+  };
+
+  // Register both endpoints as an alias to be resilient to frontend route variants
+  app.post("/api/contacts", handleCreateContact);
+  app.post("/api/contact", handleCreateContact);
 
   // WhatsApp integration endpoint
   app.post("/api/whatsapp", async (req, res) => {
