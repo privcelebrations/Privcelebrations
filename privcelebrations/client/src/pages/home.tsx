@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navigation from "@/components/navigation";
 import TheatreCard from "@/components/theatre-card";
 import BookingForm from "@/components/booking-form";
@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 import WhatsAppButton from "@/components/whatsapp-button";
 import { useQuery } from "@tanstack/react-query";
 import { Theatre, Package } from "@shared/schema";
+import { sendContact } from "@/lib/api";
 
 export default function Home() {
   const { data: theatres = [], isLoading: theatresLoading } = useQuery<Theatre[]>({
@@ -18,6 +19,7 @@ export default function Home() {
     queryKey: ['/api/packages'],
   });
 
+  const [submittingContact, setSubmittingContact] = useState(false);
   useEffect(() => {
     // Smooth scrolling for navigation links
     const handleClick = (e: Event) => {
@@ -74,7 +76,7 @@ export default function Home() {
               Experience
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              Transform your special occasions into unforgettable cinematic memories with our luxury private theatre rooms
+              PriV Transform your special occasions into unforgettable cinematic memories with our luxury private theatre rooms
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
@@ -104,7 +106,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-white">
-              Why Choose <span className="text-theatre-gold">CinePrivé</span>
+              Why Choose <span className="text-theatre-gold">PriV</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Experience cinema like never before with our premium amenities and personalized service
@@ -132,8 +134,8 @@ export default function Home() {
               <div className="text-4xl mb-4 text-theatre-gold group-hover:text-theatre-black">
                 <i className="fab fa-whatsapp"></i>
               </div>
-              <h3 className="font-display text-xl font-semibold mb-3">WhatsApp Support</h3>
-              <p className="text-gray-300 group-hover:text-theatre-black">24/7 customer assistance and instant booking confirmations via WhatsApp</p>
+              <h3 className="font-display text-xl font-semibold mb-3">Gaming </h3>
+              <p className="text-gray-300 group-hover:text-theatre-black">Big screen. Next-gen power. Pure gaming euphoria.Just PlayStation perfection</p>
             </div>
 
             <div className="bg-theatre-gray p-8 rounded-2xl hover:bg-theatre-gold hover:text-theatre-black transition-all duration-300 group">
@@ -282,7 +284,7 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-theatre-black/80 via-transparent to-transparent">
                 <div className="absolute bottom-6 left-6">
-                  <h3 className="font-display text-xl font-semibold text-white mb-2">Royal Chamber</h3>
+                  <h3 className="font-display text-xl font-semibold text-white mb-2">Royal Love Chamber</h3>
                   <p className="text-gray-300 text-sm">Intimate setting with love seats</p>
                 </div>
               </div>
@@ -373,22 +375,22 @@ export default function Home() {
             <TestimonialCard
               rating={5}
               testimonial="The Imperial Suite made our anniversary absolutely magical. The personal service and attention to detail exceeded all our expectations. We'll definitely be back!"
-              customerName="Sarah & Michael"
-              location="New York"
+              customerName="Vinay"
+              location="Hyderabad"
               imageUrl="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
             />
             <TestimonialCard
               rating={5}
               testimonial="Our daughter's 16th birthday party was incredible! The staff helped coordinate everything perfectly, and the birthday package was worth every penny."
-              customerName="Jennifer Martinez"
-              location="Los Angeles"
+              customerName="Nitha"
+              location="Hyderabad"
               imageUrl="https://images.unsplash.com/photo-1494790108755-2616b612b2bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
             />
             <TestimonialCard
               rating={5}
               testimonial="The WhatsApp booking system made everything so easy! Quick responses and seamless coordination. The Royal Chamber was perfect for our team celebration."
-              customerName="David Chen"
-              location="Chicago"
+              customerName="Shashank"
+              location="Sainikpuri"
               imageUrl="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
             />
           </div>
@@ -457,34 +459,67 @@ export default function Home() {
 
             <div className="bg-theatre-charcoal rounded-3xl p-8">
               <h3 className="font-display text-2xl font-semibold mb-6 text-white">Quick Contact</h3>
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form
+                className="space-y-6"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = e.currentTarget as HTMLFormElement;
+                  const formData = new FormData(form);
+                  const payload = Object.fromEntries(formData.entries()) as {
+                    name?: string;
+                    email?: string;
+                    message?: string;
+                  };
+
+                  if (!payload.name || !payload.email || !payload.message) {
+                    alert("Please fill in name, email and message.");
+                    return;
+                  }
+
+                  try {
+                    setSubmittingContact(true);
+                    await sendContact(payload);
+                    alert("Message sent — thank you! We'll get back to you soon.");
+                    form.reset();
+                  } catch (err) {
+                    console.error("Contact submit error:", err);
+                    alert("Failed to send message. Please try again later.");
+                  } finally {
+                    setSubmittingContact(false);
+                  }
+                }}
+              >
                 <div>
-                  <input 
-                    type="text" 
-                    placeholder="Your Name" 
-                    className="w-full bg-theatre-gray border border-theatre-gold rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-theatre-gold focus:border-transparent focus:outline-none" 
+                  <input
+                    name="name"
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full bg-theatre-gray border border-theatre-gold rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-theatre-gold focus:border-transparent focus:outline-none"
                   />
                 </div>
                 <div>
-                  <input 
-                    type="email" 
-                    placeholder="Your Email" 
-                    className="w-full bg-theatre-gray border border-theatre-gold rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-theatre-gold focus:border-transparent focus:outline-none" 
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Your Email"
+                    className="w-full bg-theatre-gray border border-theatre-gold rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-theatre-gold focus:border-transparent focus:outline-none"
                   />
                 </div>
                 <div>
-                  <textarea 
-                    rows={4} 
-                    placeholder="Your Message" 
+                  <textarea
+                    name="message"
+                    rows={4}
+                    placeholder="Your Message"
                     className="w-full bg-theatre-gray border border-theatre-gold rounded-xl px-4 py-3 text-white placeholder-gray-400 focus:ring-2 focus:ring-theatre-gold focus:border-transparent resize-none focus:outline-none"
                   />
                 </div>
-                <button 
-                  type="submit" 
-                  className="w-full gradient-gold text-theatre-black py-4 rounded-xl font-semibold text-lg hover:shadow-xl transition-all"
+                <button
+                  type="submit"
+                  disabled={submittingContact}
+                  className={`w-full gradient-gold text-theatre-black py-4 rounded-xl font-semibold text-lg hover:shadow-xl transition-all ${submittingContact ? "opacity-60 cursor-not-allowed" : ""}`}
                 >
                   <i className="fas fa-paper-plane mr-2"></i>
-                  Send Message
+                  {submittingContact ? "Sending..." : "Send Message"}
                 </button>
               </form>
             </div>
