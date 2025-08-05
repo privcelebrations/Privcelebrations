@@ -146,7 +146,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/whatsapp", async (req, res) => {
     try {
       const { message, phone } = req.body;
-      const whatsappNumber = process.env.WHATSAPP_BUSINESS_NUMBER || "+15551234567";
+      const whatsappNumber = process.env.WHATSAPP_BUSINESS_NUMBER || "+918297642050";
       
       // In a real implementation, you would integrate with WhatsApp Business API
       // For now, we'll return the WhatsApp URL for redirection
