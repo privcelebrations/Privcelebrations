@@ -5,3 +5,7 @@
 
 [context.production.environment]
   NODE_VERSION = "18"
+
+[context.production.environment]
+  # Add VITE_API_URL in Netlify UI or here (but don't commit secrets). Example placeholder:
+  VITE_API_URL = "https://privcelebrations-backend.onrender.com"
