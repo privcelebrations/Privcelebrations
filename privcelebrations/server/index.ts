@@ -1,10 +1,28 @@
+import cors from 'cors';
 import express, { type Request, Response, NextFunction } from "express";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
+// Initialize app first!
 const app = express();
+
+// Then apply middleware
+app.use(cors({
+  origin: [
+    'https://musical-liger-67f3e1.netlify.app',
+    'http://localhost:3000' // for local dev
+  ],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// ... rest of your middleware and server setup
+
+//const app = express();
+//app.use(express.json());
+//app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
   const start = Date.now();
