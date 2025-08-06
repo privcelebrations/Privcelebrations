@@ -8,7 +8,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <h1 className="font-cinzel text-2xl font-semibold text-theatre-gold">CinePrivé</h1>
+            <h1 className="font-cinzel text-2xl font-semibold text-theatre-gold">PRIV</h1>
           </div>
           
           <div className="hidden md:block">
