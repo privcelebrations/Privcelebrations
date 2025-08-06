@@ -417,7 +417,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-display text-xl font-semibold mb-2 text-white">Visit Our Location</h3>
-                  <p className="text-gray-300">123 Cinema Boulevard<br />Entertainment District<br />New York, NY 10001<br />PrivCelebrations.com</p>
+                  <p className="text-gray-300">3-9-585/1, 4th floor <br /> SBI Bank Building, beside KFC,<br />Saharastates Road, Balajinagar Rd,<br /> L B Nagar, Mansoorabad<br />Hyderabad, Telangana 500068<br />PrivCelebrations.com</p>
                 </div>
               </div>
 
@@ -427,7 +427,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-display text-xl font-semibold mb-2 text-white">Call Us</h3>
-                  <p className="text-gray-300">+1 (555) 123-PRIV<br />Available 24/7</p>
+                  <p className="text-gray-300">+918297642050<br />Available 24/7</p>
                 </div>
               </div>
 
@@ -452,7 +452,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-display text-xl font-semibold mb-2 text-white">Operating Hours</h3>
-                  <p className="text-gray-300">Monday - Thursday: 9:00 AM - 11:30 PM<br />Friday - Sunday: 10:00 AM - 11:30 AM</p>
+                  <p className="text-gray-300">Monday - Thursday: 9:00 AM - 11:30 PM<br />Friday - Sunday: 9:00 AM - 12:00 AM</p>
                 </div>
               </div>
             </div>
