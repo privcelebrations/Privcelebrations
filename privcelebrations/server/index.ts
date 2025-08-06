@@ -12,6 +12,7 @@ app.use(cors({
     'https://musical-liger-67f3e1.netlify.app',
     'http://localhost:3000' // for local dev
   ],
+  methods: ['GET', 'POST', 'OPTIONS'],
   credentials: true
 }));
 
