@@ -4,9 +4,9 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="font-cinzel text-3xl font-semibold text-theatre-gold mb-4">CinePrivé</h3>
+            <h3 className="font-cinzel text-3xl font-semibold text-theatre-gold mb-4">PriV</h3>
             <p className="text-gray-300 mb-6 max-w-md">
-             PriV Creating unforgettable private theatre experiences for parties, events, and special celebrations. 
+             PriV Creating unforgettable private theatre experiences for parties, events, Gaming and special celebrations. 
               Where luxury meets entertainment.
             </p>
             <div className="flex space-x-4">
