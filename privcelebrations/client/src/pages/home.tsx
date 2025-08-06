@@ -437,7 +437,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-display text-xl font-semibold mb-2 text-white">WhatsApp Us</h3>
-                  <p className="text-gray-300">+1 (555) 123-4567<br />Instant responses & booking assistance</p>
+                  <p className="text-gray-300">+918297642050<br />Instant responses & booking assistance</p>
                   <WhatsAppButton 
                     className="mt-3 gradient-gold text-theatre-black px-6 py-3 rounded-full font-semibold hover:shadow-lg transition-all animate-pulse-gold"
                     message="Hi! I'm interested in booking a private theatre experience. Can you help me?"
@@ -452,7 +452,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="font-display text-xl font-semibold mb-2 text-white">Operating Hours</h3>
-                  <p className="text-gray-300">Monday - Thursday: 10:00 AM - 11:00 PM<br />Friday - Sunday: 10:00 AM - 12:00 AM</p>
+                  <p className="text-gray-300">Monday - Thursday: 9:00 AM - 11:30 PM<br />Friday - Sunday: 10:00 AM - 11:30 AM</p>
                 </div>
               </div>
             </div>
