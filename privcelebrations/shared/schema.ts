@@ -48,8 +48,60 @@ export const contacts = pgTable("contacts", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
+export const addons = pgTable("addons", {
+
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`), // ✅ UUID, consistent
+
+  name: text("name").notNull(),
+
+  description: text("description").notNull(),
+
+  price: decimal("price", { precision: 10, scale: 2 }).notNull(), // ✅ INR decimal
+
+});
+
+// -------------------- Zod Schemas --------------------
+
 export const insertTheatreSchema = createInsertSchema(theatres).omit({
   id: true,
+});
+
+export const insertBookingSchema = createInsertSchema(bookings)
+
+  .omit({
+
+    id: true,
+
+    createdAt: true,
+
+  })
+
+  .extend({
+
+    bookingDate: z.string().min(1, "Date is required"),
+
+    bookingTime: z.string().min(1, "Time is required"),
+
+    customerName: z.string().min(2, "Name must be at least 2 characters"),
+
+    phone: z.string().min(10, "Valid phone number is required"),
+
+    email: z.string().email().optional().or(z.literal("")),
+
+    partySize: z.number().min(1, "Party size must be at least 1"),
+
+  });
+
+export const addons = pgTable("addons", {
+
+  id: serial("id").primaryKey(),
+
+  name: text("name").notNull(),
+
+  description: text("description"),
+
+  price: integer("price").notNull(), // stored in INR paise or INR whole? (assumes whole)
+
 });
 
 export const insertPackageSchema = createInsertSchema(packages).omit({
@@ -88,7 +140,9 @@ export type Theatre = typeof theatres.$inferSelect;
 export type Package = typeof packages.$inferSelect;
 export type Booking = typeof bookings.$inferSelect;
 export type Contact = typeof contacts.$inferSelect;
+export type Addon = typeof addons.$inferSelect;
 export type InsertTheatre = z.infer<typeof insertTheatreSchema>;
 export type InsertPackage = z.infer<typeof insertPackageSchema>;
 export type InsertBooking = z.infer<typeof insertBookingSchema>;
 export type InsertContact = z.infer<typeof insertContactSchema>;
+export type InsertAddon = z.infer<typeof insertAddonSchema>;
