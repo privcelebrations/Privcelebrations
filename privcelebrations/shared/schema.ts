@@ -50,12 +50,12 @@ export const contacts = pgTable("contacts", {
 
 export const addons = pgTable("addons", {
 
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`), // ✅ UUID
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`), // 
   name: text("name").notNull(),
 
   description: text("description").notNull(),
 
-  price: decimal("price", { precision: 10, scale: 2 }).notNull(), // ✅ INR decimal
+  price: decimal("price", { precision: 10, scale: 2 }).notNull(), // 
 
 });
 
@@ -90,12 +90,6 @@ export const insertContactSchema = createInsertSchema(contacts).omit({
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
-//export const addons = pgTable("addons", {
-//  id: serial("id").primaryKey(),
- // name: text("name").notNull(),
- // description: text("description"),
- // price: integer("price").notNull(), // stored in INR paise or INR whole? (assumes whole)
-//});
 
 export const insertAddonSchema = createInsertSchema(addons).omit({
 
