@@ -9,7 +9,7 @@
 
 // import 'dotenv/config';
 import { db } from '../server/db';
-import { theatres, packages } from '../shared/schema';
+import { theatres, packages, addons } from '../shared/schema';
 import { eq } from 'drizzle-orm';
 
 // Basic safety: require DATABASE_URL
@@ -22,24 +22,24 @@ const theatreData = [
   {
     name: 'Imperial Suite',
     description:
-      'Our premium suite featuring 12 luxury recliners, personal wait service, and champagne bar',
-    capacity: 12,
-    basePrice: '899.00',
+      'Our premium suite featuring 8 luxury recliners, personal wait service',
+    capacity: 8,
+    basePrice: '2699.00',
     imageUrl:
       'https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    amenities: ['Up to 12 guests', '3-hour experience', 'Premium catering included'],
+    amenities: ['Up to 8 guests', '3-hour experience', 'Food &amp; Beverages can be ordered at the theatre.'],
     rating: '5.0',
     duration: '3-hour experience',
   },
   {
     name: 'Royal Chamber',
     description:
-      'Intimate setting for 8 guests with love seats, personal concierge, and gourmet snack service',
-    capacity: 8,
-    basePrice: '649.00',
+      'Intimate setting for 4 guests with love seats, personal concierge, and gourmet snack service',
+    capacity: 4,
+    basePrice: '1699.00',
     imageUrl:
       'https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    amenities: ['Up to 8 guests', '2.5-hour experience', 'Perfect for date nights'],
+    amenities: ['Up to 8 guests', '2.5-hour experience', 'Perfect for date nights', 'Food &amp; Beverages can be ordered at the theatre.'],
     rating: '5.0',
     duration: '2.5-hour experience',
   },
@@ -48,52 +48,60 @@ const theatreData = [
     description:
       'Spacious theatre for larger groups with tiered seating, popcorn station, and party decorations',
     capacity: 20,
-    basePrice: '1299.00',
+    basePrice: '3699.00',
     imageUrl:
       'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600',
-    amenities: ['Up to 20 guests', '4-hour experience', 'Great for celebrations'],
+    amenities: ['Up to 20 guests', '3-hour experience', 'Great for celebrations', 'Food &amp; Beverages can be ordered at the theatre.'],
     rating: '4.9',
-    duration: '4-hour experience',
+    duration: '3-hour experience',
   },
 ];
 
 const packageData = [
   {
-    name: 'Birthday Celebration',
+    name: 'Minimal Combo @ 20% off (INR 1899)',
     description:
-      'Make their special day unforgettable with personalized decorations and birthday treats',
-    price: '199.00',
+      'Minimal Combo @ 20% off (Rs. 1899/-) Make their special day unforgettable with personalized decorations and treats',
+    price: '1899.00',
     icon: 'fas fa-birthday-cake',
     features: [
-      'Custom birthday decorations',
-      'Special birthday cake',
-      'Personalized playlist',
-      'Party favors for guests',
+      'Party Props',
+      'LED Number',
+      'LED Alphabets',
+      'Fog Effect',
+      'Photography',
     ],
   },
   {
-    name: 'Anniversary Romance',
-    description: 'Celebrate your love story with romantic ambiance and champagne service',
-    price: '249.00',
+    name: 'Kiddo Combo @ 20% off (INR 3199)',
+    description: ' Kiddo Combo @ 20% off (Rs. 3199/-) ',
+    price: '3199.00',
     icon: 'fas fa-heart',
     features: [
-      'Rose petal decorations',
-      'Champagne bottle service',
-      'Romantic lighting setup',
-      'Custom photo slideshow',
+      'Photo Clippings (16 Pics)',
+      'Party Props',
+      'LED Number',
+      'LED Alphabets',
+      'Fog Effect',
+      'Photography',
+      'Cold fire entry',
     ],
   },
   {
-    name: 'Corporate Event',
+    name: 'Family Combo @ 20% off (INR 3299)',
     description:
-      'Professional networking events with premium catering and presentation capabilities',
+      'Family Combo @ 20% off (Rs. 3299/-) ',
     price: '399.00',
     icon: 'fas fa-briefcase',
     features: [
-      'Professional setup & branding',
-      'Executive catering menu',
-      'Presentation equipment',
-      'Networking refreshments',
+      'Photo Clippings (16 Pics)',
+      'Party Props',
+      'LED Number',
+      'LED Alphabets',
+      'Fog Effect',
+      'Photography',
+      'Cold fire entry',
+      'Rose petals heart',
     ],
   },
   {
