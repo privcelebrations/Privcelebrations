@@ -77,6 +77,13 @@ export const insertContactSchema = createInsertSchema(contacts).omit({
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
+export const addons = pgTable("addons", {
+  id: serial("id").primaryKey(),
+  name: text("name").notNull(),
+  description: text("description"),
+  price: integer("price").notNull(), // stored in INR paise or INR whole? (assumes whole)
+});
+
 export type Theatre = typeof theatres.$inferSelect;
 export type Package = typeof packages.$inferSelect;
 export type Booking = typeof bookings.$inferSelect;
