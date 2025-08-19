@@ -52,7 +52,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
         amenities: ["Up to 4 guests", "3-hour experience", "Perfect for date nights", "Food &amp; Beverages can be ordered at the theatre."],
         rating: "5.0",
-        duration: "2.5-hour experience"
+        duration: "3-hour experience"
       },
       {
         name: "Grand Auditorium",
@@ -62,7 +62,7 @@ export class MemStorage implements IStorage {
         imageUrl: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
         amenities: ["Up to 20 guests", "3-hour experience", "Great for celebrations", "Food &amp; Beverages can be ordered at the theatre."],
         rating: "4.0",
-        duration: "4-hour experience"
+        duration: "3-hour experience"
       }
     ];
 
