@@ -24,7 +24,9 @@ export default function PackageCard({ package: pkg }: PackageCardProps) {
         </div>
         
         <div className="text-center">
-          <span className="text-3xl font-bold text-theatre-gold">+${pkg.price}</span>
+          <span className="text-3xl font-bold text-theatre-gold">
+            +{formatINR(pkg.price)}
+          </span>
           <p className="text-gray-400 text-sm mb-6">add-on package</p>
           <button 
             className="w-full border-2 border-theatre-gold text-theatre-gold py-3 rounded-full font-semibold hover:bg-theatre-gold hover:text-theatre-black transition-all"
