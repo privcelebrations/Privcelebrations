@@ -49,15 +49,12 @@ export const contacts = pgTable("contacts", {
 });
 
 export const addons = pgTable("addons", {
-
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`), // 
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
-
   description: text("description").notNull(),
-
-  price: decimal("price", { precision: 10, scale: 2 }).notNull(), // 
-
+  price: decimal("price", { precision: 10, scale: 2 }).notNull(), // INR
 });
+
 
 // -------------------- Zod Schemas --------------------
 
