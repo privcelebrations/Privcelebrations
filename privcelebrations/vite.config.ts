@@ -27,6 +27,30 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    // INCREASE CHUNK SIZE WARNING LIMIT
+    chunkSizeWarningLimit: 800, // Increased from default 500kB
+    // ADD ROLLUP OPTIONS FOR MANUAL CHUNKING
+    rollupOptions: {
+      output: {
+        // Automatic vendor chunking strategy
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            // Extract the package name
+            const packageName = id.toString().split('node_modules/')[1].split('/')[0];
+            // Group React-related packages together
+            if (packageName.includes('react')) {
+              return 'vendor-react';
+            }
+            // Group other large packages separately for better caching
+            if (['three', 'lodash', 'moment', 'chart.js', 'axios'].includes(packageName)) {
+              return `vendor-${packageName}`;
+            }
+            // Group all other packages into vendor-common
+            return 'vendor-common';
+          }
+        }
+      }
+    }
   },
   server: {
     fs: {
