@@ -112,7 +112,7 @@ EOF
 
     if [ "$DB_TYPE" = "postgresql" ]; then
         cat >> "$ENV_FILE" << EOF
-DATABASE_URL=postgresql://cineprive_user:YOUR_PASSWORD@localhost:5432/cineprive_production
+DATABASE_URL=postgresql://cineprive_user:Aadhya@2050@localhost:5432/cineprive_production
 EOF
     else
         cat >> "$ENV_FILE" << EOF
