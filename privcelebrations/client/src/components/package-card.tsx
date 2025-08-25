@@ -24,8 +24,6 @@ export default function PackageCard({ package: pkg }: PackageCardProps) {
         </div>
         
         <div className="text-center">
-          //<span className="text-3xl font-bold text-theatre-gold">+{formatINR(pkg.price)}</span>
-         // <span className="text-3xl font-bold text-theatre-gold">{new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Number(pkg.price))}</span>
           <span className="text-3xl font-bold text-theatre-gold">
             {new Intl.NumberFormat("en-IN", { 
             style: "currency", 
