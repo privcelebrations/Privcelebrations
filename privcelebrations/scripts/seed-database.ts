@@ -91,7 +91,7 @@ const packageData = [
     name: 'Family Combo @ 20% off (INR 3299)',
     description:
       'Family Combo @ 20% off (Rs. 3299/-) ',
-    price: '399.00',
+    price: '3299.00',
     icon: 'fas fa-briefcase',
     features: [
       'Photo Clippings (16 Pics)',
