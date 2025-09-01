@@ -39,7 +39,6 @@ export default function TheatreCard({ theatre }: TheatreCardProps) {
         
         <div className="flex justify-between items-center">
           <div>
-            //<span className="text-3xl font-bold text-theatre-gold">${theatre.basePrice}</span>
             <span className="text-3xl font-bold text-theatre-gold">{new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(Number(theatre.basePrice))}</span>
 
             <span className="text-gray-400 text-sm">/experience</span>
