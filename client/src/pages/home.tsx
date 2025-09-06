@@ -292,12 +292,12 @@ export default function Home() {
             <div className="group relative overflow-hidden rounded-3xl bg-theatre-gray">
               <img 
                 src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
-                alt="Grand Auditorium Interior" 
+                alt="Golden Imperial Interior" 
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-theatre-black/80 via-transparent to-transparent">
                 <div className="absolute bottom-6 left-6">
-                  <h3 className="font-display text-xl font-semibold text-white mb-2">Grand Auditorium</h3>
+                  <h3 className="font-display text-xl font-semibold text-white mb-2">Golden Imperial</h3>
                   <p className="text-gray-300 text-sm">Spacious tiered seating</p>
                 </div>
               </div>
