@@ -24,41 +24,65 @@ const theatreData = [
     description:
       'Our premium suite featuring 8 luxury recliners, personal wait service',
     capacity: 8,
-    basePrice: '2699.00',
+    basePrice: '2299.00',
     imageUrl:
       '/images/theatres/overthemoon.jpg',
-    amenities: ['Up to 8 guests', '3-hour experience', 'Food &amp; Beverages can be ordered at the theatre.'],
+    amenities: ['Capacity up to 6 - Max Capacity 10 - 2299 ( Includes Decor, extra person 299)', '3-hour experience', 'Food and Beverages can be ordered at the theatre.'],
     rating: '5.0',
     duration: '3-hour experience',
   },
   {
-    name: 'Royal Chamber',
+    name: 'Velvet Amour',
     description:
-      'Intimate setting for 4 guests with love seats, personal concierge, and gourmet snack service',
+      'Intimate setting for 2 guests with love seats, personal concierge, and gourmet snack service',
     capacity: 4,
     basePrice: '1699.00',
     imageUrl:
       '/images/theatres/otm.jpg',
-    amenities: ['Up to 8 guests', '2.5-hour experience', 'Perfect for date nights', 'Food &amp; Beverages can be ordered at the theatre.'],
+    amenities: ['Capacity up to 2 - Max Capacity 6 - 1699 ( Includes Love Decor, extra person 299)', '3-hour experience', 'Perfect for date nights', 'Food and Beverages can be ordered at the theatre.'],
     rating: '5.0',
     duration: '3-hour experience',
   },
   {
-    name: 'Grand Auditorium',
+    name: 'Golden Imperial',
     description:
       'Spacious theatre for larger groups with tiered seating, popcorn station, and party decorations',
     capacity: 20,
     basePrice: '3699.00',
     imageUrl:
       '/images/theatres/grand.jpg',
-    amenities: ['Up to 20 guests', '3-hour experience', 'Great for celebrations', 'Food &amp; Beverages can be ordered at the theatre.'],
-    rating: '4.9',
+    amenities: ['Capacity upto 10 - Max capacity 20 - 3699 ( which includes decor, extra person 299)', '3-hour experience', 'Great for celebrations', 'Food and Beverages can be ordered at the theatre.'],
+    rating: '5',
     duration: '3-hour experience',
   },
 ];
 
 const packageData = [
+ 
   {
+    name: 'Fog Effect (Grand entry)',
+    description: 'Fog Special Effect (Grand entry)',
+    price: '899.00',
+    icon: 'fas fa-utensils',
+    features: [
+      'Fog Effect',
+      ],
+  },
+  {
+    name: 'Cold fire entry',
+    description: 'Cold fire entry',
+    price: '999.00',
+    icon: 'fas fa-gamepad',
+    features: ['Cold fire entry'],
+  },
+  {
+    name: 'Photography - 1 hour',
+    description: "Photography - 1 hour",
+    price: '1199.00',
+    icon: 'fas fa-child',
+    features: ['Photography for 1 hour'],
+  },
+ {
     name: 'Minimal Combo @ 20% off (INR 1899)',
     description:
       'Minimal Combo @ 20% off (Rs. 1899/-) Make their special day unforgettable with personalized decorations and treats',
@@ -103,29 +127,6 @@ const packageData = [
       'Cold fire entry',
       'Rose petals heart',
     ],
-  },
-  {
-    name: 'Fog Effect (Grand entry)',
-    description: 'Fog Special Effect (Grand entry)',
-    price: '899.00',
-    icon: 'fas fa-utensils',
-    features: [
-      'Fog Effect',
-      ],
-  },
-  {
-    name: 'Cold fire entry',
-    description: 'Cold fire entry',
-    price: '999.00',
-    icon: 'fas fa-gamepad',
-    features: ['Cold fire entry'],
-  },
-  {
-    name: 'Photography - 1 hour',
-    description: "Photography - 1 hour",
-    price: '1199.00',
-    icon: 'fas fa-child',
-    features: ['Photography for 1 hour'],
   },
 ];
 
