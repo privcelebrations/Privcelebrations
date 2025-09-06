@@ -278,12 +278,12 @@ export default function Home() {
             <div className="group relative overflow-hidden rounded-3xl bg-theatre-gray">
               <img 
                 src="https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
-                alt="Royal Chamber Interior" 
+                alt="Velvet Amour Interior" 
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-theatre-black/80 via-transparent to-transparent">
                 <div className="absolute bottom-6 left-6">
-                  <h3 className="font-display text-xl font-semibold text-white mb-2">Royal Love Chamber</h3>
+                  <h3 className="font-display text-xl font-semibold text-white mb-2">Velvet Amour</h3>
                   <p className="text-gray-300 text-sm">Intimate setting with love seats</p>
                 </div>
               </div>
@@ -387,7 +387,7 @@ export default function Home() {
             />
             <TestimonialCard
               rating={5}
-              testimonial="The WhatsApp booking system made everything so easy! Quick responses and seamless coordination. The Royal Chamber was perfect for our team celebration."
+              testimonial="The WhatsApp booking system made everything so easy! Quick responses and seamless coordination. The Velvet Amour was perfect for our team celebration."
               customerName="Vamsi"
               location="Hyderabad"
               imageUrl="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100"
