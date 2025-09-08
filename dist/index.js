@@ -192,7 +192,7 @@ var MemStorage = class {
         capacity: 8,
         basePrice: "2699.00",
         imageUrl: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-        amenities: ["Up to 8 guests", "3-hour experience", "Food &amp; Beverages can be ordered at the theatre."],
+        amenities: ["Up to 8 guests", "3-hour experience", "Food and Beverages can be ordered at the theatre."],
         rating: "5.0",
         duration: "3-hour experience"
       },
@@ -202,17 +202,17 @@ var MemStorage = class {
         capacity: 4,
         basePrice: "1899.00",
         imageUrl: "https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-        amenities: ["Up to 4 guests", "3-hour experience", "Perfect for date nights", "Food &amp; Beverages can be ordered at the theatre."],
+        amenities: ["Up to 4 guests", "3-hour experience", "Perfect for date nights", "Food and Beverages can be ordered at the theatre."],
         rating: "5.0",
         duration: "3-hour experience"
       },
       {
-        name: "Grand Auditorium",
+        name: "Golden Imperial",
         description: "Spacious theatre for larger groups with tiered seating, popcorn station, and party decorations",
         capacity: 20,
         basePrice: "3699.00",
         imageUrl: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-        amenities: ["Up to 20 guests", "3-hour experience", "Great for celebrations", "Food &amp; Beverages can be ordered at the theatre."],
+        amenities: ["Up to 20 guests", "3-hour experience", "Great for celebrations", "Food and Beverages can be ordered at the theatre."],
         rating: "5.0",
         duration: "3-hour experience"
       }
