@@ -36,31 +36,31 @@ export class MemStorage implements IStorage {
     const theatresData: Omit<Theatre, 'id'>[] = [
       {
         name: "Imperial Suite",
-        description: "Our premium suite featuring 8 luxury recliners, personal wait service, and champagne bar",
+        description: "Our premium suite featuring Capacity up to 6 - Max Capacity 10 - 2299 ( Includes Decor, extra person 299)",
         capacity: 8,
-        basePrice: "2699.00",
-        imageUrl: "https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-        amenities: ["Up to 8 guests", "3-hour experience", "Food and Beverages can be ordered at the theatre."],
+        basePrice: "2299.00",
+        imageUrl: '/images/theatres/overthemoon.jpg',
+        amenities: ["Capacity up to 6 - Max Capacity 10", "3-hour experience", "Food and Beverages can be ordered at the theatre."],
         rating: "5.0",
         duration: "3-hour experience"
       },
       {
-        name: "Royal Chamber",
-        description: "Intimate setting for 4 guests with love seats, personal concierge, and gourmet snack service",
+        name: "Velvet Amour",
+        description: "Intimate setting for 2 guests with love seats, Capacity up to 2 - Max Capacity 6 - 1699 (Includes Love Decor, extra person 299)",
         capacity: 4,
         basePrice: "1899.00",
-        imageUrl: "https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-        amenities: ["Up to 4 guests", "3-hour experience", "Perfect for date nights", "Food and Beverages can be ordered at the theatre."],
+        imageUrl: '/images/theatres/otm.jpg',
+        amenities: ["Capacity up to 2 - Max Capacity 6", "3-hour experience", "Perfect for date nights", "Food and Beverages can be ordered at the theatre."],
         rating: "5.0",
         duration: "3-hour experience"
       },
       {
         name: "Golden Imperial",
-        description: "Spacious theatre for larger groups with tiered seating, popcorn station, and party decorations",
+        description: "Spacious theatre for larger groups with tiered seating, Capacity upto 10 - Max capacity 20 - 3699 ( which includes decor, extra person 299), and party decorations",
         capacity: 20,
         basePrice: "3699.00",
-        imageUrl: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
-        amenities: ["Up to 20 guests", "3-hour experience", "Great for celebrations", "Food and Beverages can be ordered at the theatre."],
+        imageUrl: '/images/theatres/grand.jpg',
+        amenities: [" Capacity upto 10 - Max capacity 20", "3-hour experience", "Great for celebrations", "Food and Beverages can be ordered at the theatre."],
         rating: "5.0",
         duration: "3-hour experience"
       }
@@ -73,28 +73,132 @@ export class MemStorage implements IStorage {
 
     // Seed packages
     const packagesData: Omit<Package, 'id'>[] = [
-      {
-        name: "Birthday Celebration",
-        description: "Perfect for milestone birthdays with custom decorations, birthday cake, and party favors",
-        price: "199.00",
-        icon: "fas fa-birthday-cake",
-        features: ["Custom birthday decorations", "Premium birthday cake", "Party favor bags", "Birthday photo session"]
-      },
-      {
-        name: "Romantic Evening",
-        description: "Create unforgettable romantic moments with champagne, roses, and intimate lighting",
-        price: "299.00",
-        icon: "fas fa-ring",
-        features: ["Rose petal decorations", "Premium champagne service", "Romantic lighting setup", "Couples photo memories"]
-      },
-      {
-        name: "Corporate Event",
-        description: "Professional networking events with premium catering and presentation capabilities",
-        price: "399.00",
-        icon: "fas fa-briefcase",
-        features: ["Professional setup & branding", "Executive catering menu", "Presentation equipment", "Networking refreshments"]
-      }
-    ];
+  {
+    name: 'Fog Effect (Grand entry)',
+    description: 'Fog Special Effect (Grand entry)',
+    price: '899.00',
+    icon: 'fas fa-utensils',
+    features: [
+      'Fog Effect',
+      ],
+  },
+  {
+    name: 'Photo Clippings (16 Pics)',
+    description: 'Photo Clippings (16 Pics)',
+    price: '449.00',
+    icon: 'fas fa-gamepad',
+    features: ['Photo Clippings (16 Pics)'],
+  },  
+  {
+    name: 'Party Props',
+    description: 'Party Props',
+    price: '149.00',
+    icon: 'fas fa-gamepad',
+    features: ['Party Props'],
+  },
+  {
+    name: 'Karaoke',
+    description: 'Karaoke',
+    price: '349.00',
+    icon: 'fas fa-gamepad',
+    features: ['Karaoke'],
+  },
+  {
+    name: 'LED Number',
+    description: 'LED Number',
+    price: '99.00',
+    icon: 'fas fa-gamepad',
+    features: ['LED Number'],
+  },
+  {
+    name: 'LED Alphabets',
+    description: 'LED Alphabets',
+    price: '99.00',
+    icon: 'fas fa-gamepad',
+    features: ['LED Alphabets'],
+  },
+  {
+    name: 'Sash',
+    description: 'Sash',
+    price: '149.00',
+    icon: 'fas fa-gamepad',
+    features: ['Sash'],
+  },
+  {
+    name: 'Rose petals heart',
+    description: 'Rose petals heart',
+    price: '199.00',
+    icon: 'fas fa-gamepad',
+    features: ['Rose petals heart'],
+  },
+  {
+    name: 'Rose petals walkway',
+    description: 'Rose petals walkway',
+    price: '249.00',
+    icon: 'fas fa-gamepad',
+    features: ['Rose petals walkway'],
+  },
+  {
+    name: 'Cold fire entry',
+    description: 'Cold fire entry',
+    price: '999.00',
+    icon: 'fas fa-gamepad',
+    features: ['Cold fire entry'],
+  },
+  {
+    name: 'Photography - 1 hour',
+    description: "Photography - 1 hour",
+    price: '1199.00',
+    icon: 'fas fa-child',
+    features: ['Photography for 1 hour'],
+  },
+ {
+    name: 'Minimal Combo 2445/- @ 20% off (INR 1899)',
+    description:
+      'Minimal Combo 2445/- @ 20% off (Rs. 1899/-) Make their special day unforgettable with personalized decorations and treats',
+    price: '1899.00',
+    icon: 'fas fa-birthday-cake',
+    features: [
+      'Party Props',
+      'LED Number',
+      'LED Alphabets',
+      'Fog Effect',
+      'Photography',
+    ],
+  },
+  {
+    name: 'Kiddo Combo 3893/- @ 20% off (INR 3199)',
+    description: ' Kiddo Combo 3893/- @ 20% off (Rs. 3199/-) ',
+    price: '3199.00',
+    icon: 'fas fa-heart',
+    features: [
+      'Photo Clippings (16 Pics)',
+      'Party Props',
+      'LED Number',
+      'LED Alphabets',
+      'Fog Effect',
+      'Photography',
+      'Cold fire entry',
+    ],
+  },
+  {
+    name: 'Family Combo 4092/- @ 20% off (INR 3299)',
+    description:
+      'Family Combo 4092/- @ 20% off (Rs. 3299/-) ',
+    price: '3299.00',
+    icon: 'fas fa-briefcase',
+    features: [
+      'Photo Clippings (16 Pics)',
+      'Party Props',
+      'LED Number',
+      'LED Alphabets',
+      'Fog Effect',
+      'Photography',
+      'Cold fire entry',
+      'Rose petals heart',
+    ],
+  },
+];
 
     packagesData.forEach(pkg => {
       const id = randomUUID();
