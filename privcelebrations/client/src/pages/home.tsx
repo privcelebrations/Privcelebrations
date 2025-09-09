@@ -263,7 +263,7 @@ export default function Home() {
             {/* Theatre Interior Images */}
             <div className="group relative overflow-hidden rounded-3xl bg-theatre-gray">
               <img 
-                src="https://images.unsplash.com/photo-1574267432553-4b4628081c31?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                src="/images/theatres/overthemoon.jpg?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
                 alt="Imperial Suite Interior" 
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -277,7 +277,7 @@ export default function Home() {
 
             <div className="group relative overflow-hidden rounded-3xl bg-theatre-gray">
               <img 
-                src="https://images.unsplash.com/photo-1596727147705-61a532a659bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                src="/images/theatres/otm.jpg?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
                 alt="Royal Chamber Interior" 
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -291,7 +291,7 @@ export default function Home() {
 
             <div className="group relative overflow-hidden rounded-3xl bg-theatre-gray">
               <img 
-                src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
+                src="/images/theatres/grand.jpg?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=400" 
                 alt="Grand Auditorium Interior" 
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-110"
               />
