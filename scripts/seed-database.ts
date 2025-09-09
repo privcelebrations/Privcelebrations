@@ -22,7 +22,7 @@ const theatreData = [
   {
     name: 'Imperial Suite',
     description:
-      'Our premium suite featuring 8 luxury recliners, personal wait service',
+      'Our premium suite featuring Capacity up to 6 - Max Capacity 10 - 2299 ( Includes Decor, extra person 299)',
     capacity: 8,
     basePrice: '2299.00',
     imageUrl:
@@ -34,7 +34,7 @@ const theatreData = [
   {
     name: 'Velvet Amour',
     description:
-      'Intimate setting for 2 guests with love seats, personal concierge, and gourmet snack service',
+      'Intimate setting for 2 guests with love seats, Capacity up to 2 - Max Capacity 6 - 1699 (Includes Love Decor, extra person 299)',
     capacity: 4,
     basePrice: '1699.00',
     imageUrl:
@@ -59,7 +59,7 @@ const theatreData = [
 
 const packageData = [
  
-  {
+   {
     name: 'Fog Effect (Grand entry)',
     description: 'Fog Special Effect (Grand entry)',
     price: '899.00',
@@ -67,6 +67,62 @@ const packageData = [
     features: [
       'Fog Effect',
       ],
+  },
+  {
+    name: 'Photo Clippings (16 Pics)',
+    description: 'Photo Clippings (16 Pics)',
+    price: '449.00',
+    icon: 'fas fa-gamepad',
+    features: ['Photo Clippings (16 Pics)'],
+  },  
+  {
+    name: 'Party Props',
+    description: 'Party Props',
+    price: '149.00',
+    icon: 'fas fa-gamepad',
+    features: ['Party Props'],
+  },
+  {
+    name: 'Karaoke',
+    description: 'Karaoke',
+    price: '349.00',
+    icon: 'fas fa-gamepad',
+    features: ['Karaoke'],
+  },
+  {
+    name: 'LED Number',
+    description: 'LED Number',
+    price: '99.00',
+    icon: 'fas fa-gamepad',
+    features: ['LED Number'],
+  },
+  {
+    name: 'LED Alphabets',
+    description: 'LED Alphabets',
+    price: '99.00',
+    icon: 'fas fa-gamepad',
+    features: ['LED Alphabets'],
+  },
+  {
+    name: 'Sash',
+    description: 'Sash',
+    price: '149.00',
+    icon: 'fas fa-gamepad',
+    features: ['Sash'],
+  },
+  {
+    name: 'Rose petals heart',
+    description: 'Rose petals heart',
+    price: '199.00',
+    icon: 'fas fa-gamepad',
+    features: ['Rose petals heart'],
+  },
+  {
+    name: 'Rose petals walkway',
+    description: 'Rose petals walkway',
+    price: '249.00',
+    icon: 'fas fa-gamepad',
+    features: ['Rose petals walkway'],
   },
   {
     name: 'Cold fire entry',
@@ -82,10 +138,10 @@ const packageData = [
     icon: 'fas fa-child',
     features: ['Photography for 1 hour'],
   },
- {
-    name: 'Minimal Combo @ 20% off (INR 1899)',
+  {
+    name: 'Minimal Combo 2445/- @ 20% off (INR 1899)',
     description:
-      'Minimal Combo @ 20% off (Rs. 1899/-) Make their special day unforgettable with personalized decorations and treats',
+      'Minimal Combo 2445/- @ 20% off (Rs. 1899/-) Make their special day unforgettable with personalized decorations and treats',
     price: '1899.00',
     icon: 'fas fa-birthday-cake',
     features: [
@@ -97,8 +153,8 @@ const packageData = [
     ],
   },
   {
-    name: 'Kiddo Combo @ 20% off (INR 3199)',
-    description: ' Kiddo Combo @ 20% off (Rs. 3199/-) ',
+    name: 'Kiddo Combo 3893/- @ 20% off (INR 3199)',
+    description: ' Kiddo Combo 3893/- @ 20% off (Rs. 3199/-) ',
     price: '3199.00',
     icon: 'fas fa-heart',
     features: [
@@ -112,9 +168,9 @@ const packageData = [
     ],
   },
   {
-    name: 'Family Combo @ 20% off (INR 3299)',
+    name: 'Family Combo 4092/- @ 20% off (INR 3299)',
     description:
-      'Family Combo @ 20% off (Rs. 3299/-) ',
+      'Family Combo 4092/- @ 20% off (Rs. 3299/-) ',
     price: '3299.00',
     icon: 'fas fa-briefcase',
     features: [
