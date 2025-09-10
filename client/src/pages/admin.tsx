@@ -147,7 +147,7 @@ export default function AdminPage() {
                         </div>
                         <div className="flex items-center space-x-2">
                           <DollarSign className="h-4 w-4 text-theatre-gold" />
-                          <span className="text-theatre-gold font-semibold">${booking.totalPrice}</span>
+                          <span className="text-theatre-gold font-semibold">₹{booking.totalPrice}</span>
                         </div>
                       </div>
                       
