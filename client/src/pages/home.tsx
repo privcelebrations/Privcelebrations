@@ -70,10 +70,19 @@ export default function Home() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-fade-in">
-            <h4 className="font-display text-6xl md:text-8xl font-bold mb-6 text-white">
-              
-              <span className="text-theatre-gold block">PRIV Coolest way to celebrate!</span>
-            </h4>
+            <h1 className="font-display font-bold mb-6 text-center">
+  			<span
+            className="block text-[clamp(3rem,6vw,7rem)] bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
+  	        >
+             PRIV
+ 		    </span>
+            <span
+             className="block text-[clamp(1.25rem,2vw,2rem)] text-white mt-2 opacity-0 animate-fadeInUp"
+            >
+            Coolest Way to Celebrate!
+            </span>
+            </h1>
+
             <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
                Premium Private Theatre Experience! Host unforgettable parties, events, and get-togethers in our luxury theatre rooms
             </p>
