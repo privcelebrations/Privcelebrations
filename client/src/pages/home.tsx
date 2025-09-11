@@ -59,55 +59,73 @@ export default function Home() {
       <Navigation />
       
       {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1489599735819-c4f67c14a5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-theatre-black via-theatre-black/70 to-transparent" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in">
-            <h1 className="font-display font-bold mb-6 text-center">
-  			<span
-            className="block text-[clamp(3rem,6vw,7rem)] bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-[length:200%_auto] bg-clip-text text-transparent animate-shimmer"
-  	        >
-             PRIV
- 		    </span>
-            <span
-             className="block text-[clamp(1.25rem,2vw,2rem)] text-white mt-2 opacity-0 animate-fadeInUp"
-            >
-            Coolest Way to Celebrate!
-            </span>
-            </h1>
+      {/* Hero Section */}
+<section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  {/* Background */}
+  <div 
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: "url('https://images.unsplash.com/photo-1489599735819-c4f67c14a5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')"
+    }}
+  />
+  <div className="absolute inset-0 bg-gradient-to-r from-theatre-black via-theatre-black/70 to-transparent" />
 
-            <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
-               Premium Private Theatre Experience! Host unforgettable parties, events, and get-togethers in our luxury theatre rooms
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                className="gradient-gold text-theatre-black px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all animate-slide-up"
-                onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                <i className="fas fa-ticket-alt mr-2"></i>
-                Book Your Experience
-              </button>
-              <button className="border-2 border-theatre-gold text-theatre-gold px-8 py-4 rounded-full text-lg font-semibold hover:bg-theatre-gold hover:text-theatre-black transition-all animate-slide-up">
-                <i className="fas fa-play mr-2"></i>
-                Watch Virtual Tour
-              </button>
-            </div>
-          </div>
-        </div>
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    {/* Inline keyframes to avoid Tailwind purge */}
+    <style>{`
+      @keyframes shimmer {
+        0% { background-position: 0% 50%; }
+        100% { background-position: 200% 50%; }
+      }
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+    `}</style>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-theatre-gold rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-theatre-gold rounded-full mt-2 animate-pulse"></div>
-          </div>
-        </div>
-      </section>
+    {/* PRIV heading with shimmer */}
+    <h1 className="font-display font-bold mb-4">
+      <span
+        className="inline-block text-[clamp(3rem,6vw,7rem)] bg-gradient-to-r from-yellow-300 via-yellow-500 to-yellow-700 bg-[length:200%_auto] bg-clip-text text-transparent animate-[shimmer_3s_linear_infinite]"
+      >
+        PRIV
+      </span>
+      <br />
+      <span
+        className="text-[clamp(1.25rem,2vw,2rem)] text-white opacity-0 animate-[fadeInUp_1s_ease-out_forwards]"
+        style={{ animationDelay: "0.5s" }}
+      >
+        Coolest Way to Celebrate!
+      </span>
+    </h1>
+
+    <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-3xl mx-auto leading-relaxed">
+      Premium Private Theatre Experience! Host unforgettable parties, events, and get-togethers in our luxury theatre rooms
+    </p>
+
+    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+      <button 
+        className="gradient-gold text-theatre-black px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all animate-slide-up"
+        onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
+      >
+        <i className="fas fa-ticket-alt mr-2"></i>
+        Book Your Experience
+      </button>
+      <button className="border-2 border-theatre-gold text-theatre-gold px-8 py-4 rounded-full text-lg font-semibold hover:bg-theatre-gold hover:text-theatre-black transition-all animate-slide-up">
+        <i className="fas fa-play mr-2"></i>
+        Watch Virtual Tour
+      </button>
+    </div>
+  </div>
+
+  {/* Scroll Indicator */}
+  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <div className="w-6 h-10 border-2 border-theatre-gold rounded-full flex justify-center">
+      <div className="w-1 h-3 bg-theatre-gold rounded-full mt-2 animate-pulse"></div>
+    </div>
+  </div>
+</section>
+
 
       {/* Features Section */}
       <section className="py-20 bg-theatre-charcoal">
