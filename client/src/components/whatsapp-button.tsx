@@ -11,7 +11,7 @@ export default function WhatsAppButton({
   showText = false,
   customText = "Chat Now"
 }: WhatsAppButtonProps) {
-  const whatsappNumber = "+918297642050"; // PrivCelebrations.com contact number
+  const whatsappNumber = "+918121012020"; // PrivCelebrations.com contact number
   
   const handleWhatsAppClick = () => {
     const whatsappUrl = `https://wa.me/${whatsappNumber.replace('+', '')}?text=${encodeURIComponent(message)}`;
