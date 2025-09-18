@@ -216,7 +216,19 @@ async function ensureTheatreExists(t: typeof theatreData[number]) {
   });
 
   if (found) {
-    console.log(`↩️ Skipping theatre (exists): ${t.name}`);
+    console.log(`↩️ Updating theatre (exists): ${t.name}`);
+    await db.update(theatres)
+      .set({
+        description: t.description,
+        capacity: t.capacity,
+        basePrice: t.basePrice,
+        imageUrl: t.imageUrl,
+        additionalImages: t.additionalImages,
+        amenities: t.amenities,
+        rating: t.rating,
+        duration: t.duration,
+      })
+      .where(eq(theatres.name, t.name));
     return;
   }
 
@@ -230,7 +242,15 @@ async function ensurePackageExists(p: typeof packageData[number]) {
   });
 
   if (found) {
-    console.log(`↩️ Skipping package (exists): ${p.name}`);
+    console.log(`↩️ Updating package (exists): ${p.name}`);
+    await db.update(packages)
+      .set({
+        description: p.description,
+        price: p.price,
+        icon: p.icon,
+        features: p.features,
+      })
+      .where(eq(packages.name, p.name));
     return;
   }
 
