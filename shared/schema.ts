@@ -10,6 +10,7 @@ export const theatres = pgTable("theatres", {
   capacity: integer("capacity").notNull(),
   basePrice: decimal("base_price", { precision: 10, scale: 2 }).notNull(),
   imageUrl: text("image_url").notNull(),
+  additionalImages: text("additional_images").array().default([]),
   amenities: text("amenities").array().notNull(),
   rating: decimal("rating", { precision: 2, scale: 1 }).notNull(),
   duration: text("duration").notNull(),
@@ -60,6 +61,8 @@ export const addons = pgTable("addons", {
 
 export const insertTheatreSchema = createInsertSchema(theatres).omit({
   id: true,
+  }).extend({
+  additionalImages: z.array(z.string()).optional().default([]), 
 });
 
 export const insertPackageSchema = createInsertSchema(packages).omit({
