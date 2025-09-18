@@ -14,7 +14,7 @@ export default function TheatreGalleryModal({ isOpen, onClose, theatre }: Theatr
 
   if (!isOpen) return null;
 
-  // Use additionalImages if available, otherwise default to empty array
+  // SAFE ACCESS - critical fix for undefined additionalImages
   const additionalImages = theatre.additionalImages || [];
   const allImages = [theatre.imageUrl, ...additionalImages];
 
@@ -67,7 +67,7 @@ export default function TheatreGalleryModal({ isOpen, onClose, theatre }: Theatr
               </div>
             </div>
 
-            {/* Additional images grid */}
+            {/* Additional images grid - only show if there are additional images */}
             {additionalImages.length > 0 && (
               <div>
                 <h4 className="font-display text-lg font-medium mb-4 text-theatre-gold">Additional Photos</h4>
@@ -86,6 +86,14 @@ export default function TheatreGalleryModal({ isOpen, onClose, theatre }: Theatr
                 </div>
               </div>
             )}
+
+            {/* Message if no additional images */}
+            {additionalImages.length === 0 && (
+              <div className="text-center py-8">
+                <p className="text-gray-400 text-lg">No additional photos available</p>
+                <p className="text-gray-500 text-sm mt-2">Check back later for more images of this theatre</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -100,19 +108,23 @@ export default function TheatreGalleryModal({ isOpen, onClose, theatre }: Theatr
             ×
           </button>
           
-          <button
-            onClick={goToPrev}
-            className="absolute left-6 text-white text-2xl z-60 bg-theatre-charcoal bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all"
-          >
-            ‹
-          </button>
-          
-          <button
-            onClick={goToNext}
-            className="absolute right-6 text-white text-2xl z-60 bg-theatre-charcoal bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all"
-          >
-            ›
-          </button>
+          {allImages.length > 1 && (
+            <>
+              <button
+                onClick={goToPrev}
+                className="absolute left-6 text-white text-2xl z-60 bg-theatre-charcoal bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all"
+              >
+                ‹
+              </button>
+              
+              <button
+                onClick={goToNext}
+                className="absolute right-6 text-white text-2xl z-60 bg-theatre-charcoal bg-opacity-50 rounded-full w-10 h-10 flex items-center justify-center hover:bg-opacity-75 transition-all"
+              >
+                ›
+              </button>
+            </>
+          )}
 
           <div className="relative max-w-4xl max-h-full mx-4">
             <img
