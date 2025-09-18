@@ -82,7 +82,13 @@ export default function TheatreCard({ theatre }: TheatreCardProps) {
       <TheatreGalleryModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        theatre={theatre}
+        theatre={{
+
+          ...theatre,
+
+          additionalImages: additionalImages
+
+        }}
       />
     </>
   );
