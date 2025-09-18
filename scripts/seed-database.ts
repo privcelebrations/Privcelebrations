@@ -27,6 +27,14 @@ const theatreData = [
     basePrice: '2299.00',
     imageUrl:
       '/images/theatres/overthemoon.jpg',
+    additionalImages: [ // ADD ADDITIONAL IMAGES
+      '/images/theatres/overthemoon.jpg',
+      '/images/theatres/overthemoon1.jpg',
+      '/images/theatres/overthemoon2.jpg',
+      '/images/theatres/overthemoon3.jpg',
+      '/images/theatres/overthemoon4.jpg',
+      '/images/theatres/overthemoon5.jpg'
+    ],
     amenities: ['Capacity up to 6 - Max Capacity 10 - 2299 ( Includes Decor, extra person 299)', '3-hour experience', 'Food and Beverages can be ordered at the theatre.'],
     rating: '5.0',
     duration: '3-hour experience',
@@ -39,6 +47,14 @@ const theatreData = [
     basePrice: '1699.00',
     imageUrl:
       '/images/theatres/otm.jpg',
+    additionalImages: [ // ADD ADDITIONAL IMAGES
+      '/images/theatres/otm.jpg',
+      '/images/theatres/otm1.jpg',
+      '/images/theatres/otm2.jpg',
+      '/images/theatres/otm3.jpg',
+      '/images/theatres/otm4.jpg',
+      '/images/theatres/otm5.jpg'
+    ],
     amenities: ['Capacity up to 2 - Max Capacity 6 - 1699 ( Includes Love Decor, extra person 299)', '3-hour experience', 'Perfect for date nights', 'Food and Beverages can be ordered at the theatre.'],
     rating: '5.0',
     duration: '3-hour experience',
@@ -51,6 +67,14 @@ const theatreData = [
     basePrice: '3699.00',
     imageUrl:
       '/images/theatres/grand.jpg',
+    additionalImages: [ // ADD ADDITIONAL IMAGES
+      '/images/theatres/grand.jpg',
+      '/images/theatres/grand1.jpg',
+      '/images/theatres/grand2.jpg',
+      '/images/theatres/grand3.jpg',
+      '/images/theatres/grand4.jpg',
+      '/images/theatres/grand5.jpg'
+    ],
     amenities: ['Capacity upto 10 - Max capacity 20 - 3699 ( which includes decor, extra person 299)', '3-hour experience', 'Great for celebrations', 'Food and Beverages can be ordered at the theatre.'],
     rating: '5',
     duration: '3-hour experience',
@@ -63,7 +87,7 @@ const packageData = [
     name: 'Fog Effect (Grand entry)',
     description: 'Fog Special Effect (Grand entry)',
     price: '899.00',
-    icon: 'fas fa-utensils',
+    icon: 'fas fa-smog',
     features: [
       'Fog Effect',
       ],
@@ -72,70 +96,70 @@ const packageData = [
     name: 'Photo Clippings (16 Pics)',
     description: 'Photo Clippings (16 Pics)',
     price: '449.00',
-    icon: 'fas fa-gamepad',
+    icon: 'fas fa-camera-retro',
     features: ['Photo Clippings (16 Pics)'],
   },  
   {
     name: 'Party Props',
     description: 'Party Props',
     price: '149.00',
-    icon: 'fas fa-gamepad',
+    icon: 'fas fa-gifts',
     features: ['Party Props'],
   },
   {
     name: 'Karaoke',
     description: 'Karaoke',
     price: '349.00',
-    icon: 'fas fa-gamepad',
+    icon: 'fas fa-microphone',
     features: ['Karaoke'],
   },
   {
     name: 'LED Number',
     description: 'LED Number',
     price: '99.00',
-    icon: 'fas fa-gamepad',
+    icon: 'fas fa-lightbulb',
     features: ['LED Number'],
   },
   {
     name: 'LED Alphabets',
     description: 'LED Alphabets',
     price: '99.00',
-    icon: 'fas fa-gamepad',
+    icon: 'fas fa-font',
     features: ['LED Alphabets'],
   },
   {
     name: 'Sash',
     description: 'Sash',
     price: '149.00',
-    icon: 'fas fa-gamepad',
+    icon: 'fas fa-ribbon',
     features: ['Sash'],
   },
   {
     name: 'Rose petals heart',
     description: 'Rose petals heart',
     price: '199.00',
-    icon: 'fas fa-gamepad',
+    icon: 'fas fa-heart',
     features: ['Rose petals heart'],
   },
   {
     name: 'Rose petals walkway',
     description: 'Rose petals walkway',
     price: '249.00',
-    icon: 'fas fa-gamepad',
+    icon: 'fas fa-route',
     features: ['Rose petals walkway'],
   },
   {
     name: 'Cold fire entry',
     description: 'Cold fire entry',
     price: '999.00',
-    icon: 'fas fa-gamepad',
+    icon: 'fas fa-fire',
     features: ['Cold fire entry'],
   },
   {
     name: 'Photography - 1 hour',
     description: "Photography - 1 hour",
     price: '1199.00',
-    icon: 'fas fa-child',
+    icon: 'fas fa-camera-retro',
     features: ['Photography for 1 hour'],
   },
   {
@@ -172,7 +196,7 @@ const packageData = [
     description:
       'Family Combo 4092/- @ 20% off (Rs. 3299/-) ',
     price: '3299.00',
-    icon: 'fas fa-briefcase',
+    icon: 'fas fa-users',
     features: [
       'Photo Clippings (16 Pics)',
       'Party Props',
